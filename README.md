@@ -3,202 +3,327 @@
 ### Name: Ajay Karthick M
 ### Reg No: 212225040014
 
-## AIM
-To evaluate and compare the effectiveness of prompting techniques (Zero-Shot, Few-Shot, Chain-of-Thought, and Role-Based Prompting) across different AI platforms such as ChatGPT, Gemini, Claude, and Copilot for the task of technical text summarization.
 
----
+# EXPERIMENT: DESIGNING PROMPTS USING DIFFERENT PROMPT STRUCTURES
 
-## Scenario
-You are part of a content curation team for an educational platform that delivers quick summaries of research papers to undergraduate students. Your task is to summarize a 500-word technical article on **“The Basics of Blockchain Technology”** using multiple AI platforms and prompting strategies.
+## 1. OBJECTIVE
 
-Your goal is to determine which combination of prompting technique + platform provides the best summary in terms of:
+To design and experiment with different prompt structures by gradually improving a basic prompt into an effective and well-structured prompt using Role Prompting, Context Prompting, Constraint Prompting, and Output Format Prompting.
 
-- Accuracy
-- Coherence
-- Simplicity
-- Speed
-- User Experience
+## 2. APPLICATION SELECTED
 
----
+**Application: Text Summarization**
 
-# Algorithm:
+Text summarization is the process of converting lengthy information into shorter, meaningful, and easy-to-understand content while preserving the important points.
 
-<img width="1714" height="918" alt="image" src="https://github.com/user-attachments/assets/d86532fe-bbe6-44c8-bb48-6c821e4202f8" />
-
-
-## Step 1: Select the Topic
-Choose a technical article for summarization.
-
-Selected Topic:
-**“The Basics of Blockchain Technology”**
-
-The article includes:
-- Definition of blockchain
-- Decentralized ledger concept
-- Blocks and cryptographic hashing
-- Consensus mechanisms
-- Applications of blockchain
-- Advantages and challenges
-
----
-
-## Step 2: Choose AI Platforms
-The following AI tools were selected for experimentation:
-
+**AI Tool Used:**
 - ChatGPT
-- Google Gemini
-- Claude AI
-- Microsoft Copilot
+
+## 3. INTRODUCTION
+
+Prompt Engineering is the process of designing and improving instructions given to Generative AI models to obtain accurate, relevant, and useful responses.
+
+Different prompt structures help improve the quality of AI-generated outputs.
+
+In this experiment, five prompt structures are used to generate a summary of a given text.
+
+The prompt structures are:
+
+1. Basic Prompt
+2. Role Prompt
+3. Context Prompt
+4. Constraint Prompt
+5. Output Format Prompt
+
+## 4. SAMPLE INPUT TEXT
+
+The following text is used as the input for all five prompt structures.
+
+**Topic: Cloud Computing**
+
+Cloud computing is a technology that allows users to access computing resources such as servers, storage, databases, networking, and software through the internet. Instead of purchasing and maintaining physical hardware, organizations can use cloud services provided by companies such as Amazon Web Services (AWS), Microsoft Azure, and Google Cloud.
+
+Cloud computing offers several advantages, including cost savings, scalability, flexibility, data backup, and accessibility. It allows businesses to increase or decrease their computing resources according to their requirements.
+
+There are three major cloud service models: Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS). Cloud computing also supports different deployment models, including public cloud, private cloud, and hybrid cloud.
+
+Today, cloud computing is widely used in education, healthcare, banking, business, and software development. It plays an important role in modern digital transformation.
 
 ---
 
-## Step 3: Prepare Prompting Techniques
+## 5. DIFFERENT PROMPT STRUCTURES
 
-Four prompting strategies were used:
+### EXPERIMENT 1: BASIC PROMPT
 
-### A. Zero-Shot Prompting
-The AI is directly asked to summarize the article without examples.
+**Definition:**
 
-**Example:**  
-“Summarize the following blockchain article in simple language for undergraduate students.”
+A Basic Prompt is a simple instruction given to an AI model to perform a particular task without additional role, context, or constraints.
 
----
+**Prompt:**
 
-### B. Few-Shot Prompting
-The AI is provided with sample summaries before the actual task.
+Summarize the following text about cloud computing.
 
-**Example:**  
-Providing 1–2 example technical summaries before asking for the blockchain summary.
+**Expected Output:**
 
----
+Cloud computing provides computing resources such as servers, storage, and software through the internet. It reduces hardware costs and offers scalability, flexibility, and accessibility. Its major service models are IaaS, PaaS, and SaaS. Cloud computing is widely used in education, healthcare, banking, and business.
 
-### C. Chain-of-Thought Prompting
-The AI is instructed to analyze the article step-by-step before generating the summary.
+**Observation:**
 
-**Example:**  
-“Identify the important concepts first and then generate a concise summary.”
+The AI generated a basic summary containing the main points. However, the response may lack detailed explanations and a specific structure.
 
 ---
 
-### D. Role-Based Prompting
-A role or persona is assigned to the AI.
+### EXPERIMENT 2: ROLE PROMPT
 
-**Example:**  
-“Act as a university professor and summarize blockchain technology for students.”
+**Definition:**
 
----
+A Role Prompt assigns a specific identity or professional role to the AI model to guide how it responds.
 
-## Step 4: Generate Responses
-The same blockchain article was given to every AI platform.
+**Prompt:**
 
-Each prompting strategy was tested individually:
-- Zero-Shot
-- Few-Shot
-- Chain-of-Thought
-- Role-Based
+Act as a professional Computer Science professor. Summarize the following text about cloud computing in a way that is easy for engineering students to understand.
 
-The generated summaries were collected and analyzed.
+**Expected Output:**
 
----
+Cloud computing is a technology that provides computing services such as servers, storage, databases, and software through the internet.
 
-## Step 5: Organize Results
-The responses were compared based on:
-- Accuracy
-- Coherence
-- Simplicity
-- Speed
-- User Experience
+It helps organizations reduce hardware costs and access computing resources whenever required.
+
+The three major service models are:
+- IaaS – Infrastructure as a Service.
+- PaaS – Platform as a Service.
+- SaaS – Software as a Service.
+
+Cloud computing is commonly used in education, healthcare, banking, and software development.
+
+**Observation:**
+
+The AI adopted the role of a Computer Science professor and generated an educational explanation suitable for engineering students.
 
 ---
 
-# Result
+### EXPERIMENT 3: CONTEXT PROMPT
 
-## ChatGPT + Zero-Shot Prompting
+**Definition:**
 
-### Prompt Used
-> “Summarize the following article on Blockchain Technology in simple language for undergraduate students.”
+A Context Prompt provides background information about the user, situation, or purpose of the task so that the AI can generate more relevant responses.
 
-### Summary Generated
-Blockchain is a decentralized digital system used to securely store information across multiple computers. Data is stored in blocks linked together using cryptographic techniques. Blockchain removes the need for a central authority and improves transparency and security. It is commonly used in cryptocurrencies like Bitcoin and also in banking, healthcare, and supply chains. Major challenges include energy consumption and scalability.
+**Prompt:**
 
-### Evaluation
-- Accuracy: High
-- Coherence: Good
-- Simplicity: Excellent
-- Speed: Very Fast
-- User Experience: Excellent
+I am a second-year Computer Science Engineering student preparing for my university examination. I need to understand cloud computing quickly for revision.
 
----
+Summarize the following text about cloud computing. Focus on important definitions, service models, advantages, and applications. Make the explanation easy to understand for an engineering student.
 
-## Gemini + Few-Shot Prompting
+**Expected Output:**
 
-### Prompt Used
-> “Here are two sample technical summaries. Now summarize the blockchain article similarly.”
+Cloud computing is the delivery of computing services such as servers, storage, databases, and software over the internet.
 
-### Summary Generated
-Blockchain is a secure distributed database where records are stored in connected blocks. Every participant has access to the same data, making the system transparent and difficult to alter. Blockchain supports cryptocurrency systems and improves applications in finance, healthcare, and logistics. However, challenges such as high power usage and slower transaction speed still exist.
+**Advantages:**
+1. Cost reduction.
+2. Scalability.
+3. Flexibility.
+4. Accessibility.
+5. Data backup.
 
-### Evaluation
-- Accuracy: Very High
-- Coherence: Excellent
-- Simplicity: Moderate
-- Speed: Fast
-- User Experience: Good
+**Service Models:**
+- IaaS: Provides virtualized computing infrastructure.
+- PaaS: Provides a platform for application development.
+- SaaS: Provides software applications over the internet.
 
----
+**Applications:**
+- Education.
+- Healthcare.
+- Banking.
+- Business.
+- Software development.
 
-## Claude AI + Chain-of-Thought Prompting
+**Observation:**
 
-### Prompt Used
-> “Analyze the article step-by-step, identify key concepts, and then generate a concise student-friendly summary.”
-
-### Summary Generated
-Blockchain technology is a decentralized ledger system that securely records transactions across computer networks. Transactions are grouped into blocks and connected using cryptographic hashes. Consensus methods such as Proof of Work and Proof of Stake validate transactions securely. Blockchain is widely used in cryptocurrencies and has applications in healthcare, banking, and supply chain management. Its major strengths are transparency and security, while scalability and energy consumption remain challenges.
-
-### Evaluation
-- Accuracy: Excellent
-- Coherence: Excellent
-- Simplicity: Good
-- Speed: Moderate
-- User Experience: Very Good
+Providing background information helped the AI generate a more relevant summary based on the student's learning requirements.
 
 ---
 
-## Copilot + Role-Based Prompting
+### EXPERIMENT 4: CONSTRAINT PROMPT
 
-### Prompt Used
-> “Act as a university tutor and explain blockchain technology briefly for undergraduate students.”
+**Definition:**
 
-### Summary Generated
-Blockchain is a technology that stores information in digital blocks connected together. Since the data is distributed across many systems, it becomes secure and difficult to modify. Blockchain removes dependence on centralized authorities and improves transparency. It is commonly used in cryptocurrencies and financial systems, but issues like electricity usage and processing speed remain concerns.
+A Constraint Prompt specifies limitations or conditions that the AI must follow while generating the response.
 
-### Evaluation
-- Accuracy: Good
-- Coherence: Good
-- Simplicity: Excellent
-- Speed: Fast
-- User Experience: Good
+**Prompt:**
+
+Summarize the following text about cloud computing by following these conditions:
+
+1. Use simple English.
+2. Keep the summary within 100 words.
+3. Include only the most important points.
+4. Explain all three cloud service models.
+5. Avoid unnecessary technical details.
+6. Do not introduce information that is not present in the given text.
+
+**Expected Output:**
+
+Cloud computing provides computing resources such as servers, storage, databases, and software through the internet. It reduces hardware costs and offers scalability, flexibility, and accessibility. Its three service models are IaaS (infrastructure), PaaS (application development platform), and SaaS (software applications). Cloud computing supports public, private, and hybrid deployment models. It is widely used in education, healthcare, banking, business, and software development.
+
+**Observation:**
+
+The AI followed the specified conditions and generated a concise summary within the required word limit.
 
 ---
 
-# Comparison Table
+### EXPERIMENT 5: OUTPUT FORMAT PROMPT
 
-| Platform | Prompting Technique | Accuracy | Coherence | Simplicity | Speed | User Experience |
-|---|---|---|---|---|---|---|
-| ChatGPT | Zero-Shot | High | Good | Excellent | Very Fast | Excellent |
-| Gemini | Few-Shot | Very High | Excellent | Moderate | Fast | Good |
-| Claude AI | Chain-of-Thought | Excellent | Excellent | Good | Moderate | Very Good |
-| Copilot | Role-Based | Good | Good | Excellent | Fast | Good |
+**Definition:**
+
+An Output Format Prompt specifies how the AI should organize and present its response, such as using tables, bullet points, headings, or numbered lists.
+
+**Prompt:**
+
+Summarize the following text about cloud computing using the following output format:
+
+1. Definition: Explain cloud computing in two sentences.
+2. Advantages: Present five advantages using bullet points.
+3. Service Models: Present IaaS, PaaS, and SaaS in a table.
+4. Applications: List five major application areas.
+5. Conclusion: Provide a short concluding statement.
+
+Use simple English and make the content suitable for engineering students.
+
+**Expected Output:**
+
+### Definition
+Cloud computing is the delivery of computing resources through the internet. It allows users to access servers, storage, databases, and software without maintaining physical hardware.
+
+### Advantages
+- Cost savings.
+- Scalability.
+- Flexibility.
+- Accessibility.
+- Data backup.
+
+### Service Models
+
+| Model | Description |
+|---|---|
+| IaaS | Provides computing infrastructure. |
+| PaaS | Provides an application development platform. |
+| SaaS | Provides software applications over the internet. |
+
+### Applications
+1. Education.
+2. Healthcare.
+3. Banking.
+4. Business.
+5. Software development.
+
+### Conclusion
+Cloud computing is an important technology that provides flexible, scalable, and cost-effective computing services.
+
+**Observation:**
+
+The AI generated a well-organized response using headings, bullet points, and a table as requested.
 
 ---
 
-# Final Result
+## 6. FINAL PROMPT (COMBINED PROMPT STRUCTURE)
 
-Thus, different prompting strategies were tested across multiple AI platforms for summarizing a technical article on blockchain technology.
+After experimenting with all five prompt structures, combine them into a single advanced prompt.
 
-- **Claude AI + Chain-of-Thought Prompting** produced the most accurate and coherent summaries.
-- **ChatGPT + Zero-Shot Prompting** provided the best balance between simplicity, speed, and readability.
-- **Gemini + Few-Shot Prompting** generated structured and detailed summaries.
-- **Copilot + Role-Based Prompting** created beginner-friendly and concise explanations.
+**Final Prompt:**
 
-Overall, **ChatGPT with Zero-Shot Prompting** was identified as the most suitable combination for undergraduate educational summaries because it offered clear, simple, fast, and user-friendly results.
+Act as a professional Computer Science professor.
+
+I am a second-year Computer Science Engineering student preparing for my university examination. I need to understand cloud computing quickly and effectively.
+
+Summarize the given text about cloud computing by following these instructions:
+
+**Task:**
+Create a clear and informative summary of the given text.
+
+**Context:**
+The summary is intended for an engineering student who needs to understand and revise the important concepts.
+
+**Constraints:**
+1. Use simple English.
+2. Keep the summary within 150 words.
+3. Include all important concepts.
+4. Avoid unnecessary technical details.
+5. Do not introduce unsupported information.
+
+**Output Format:**
+1. Definition of cloud computing.
+2. Five important advantages.
+3. A table explaining IaaS, PaaS, and SaaS.
+4. Five real-world applications.
+5. A short conclusion.
+
+Make the response accurate, easy to understand, and suitable for examination preparation.
+
+**Input Text:**
+
+[Paste the cloud computing text here.]
+
+**Observation:**
+
+The final combined prompt generated a more relevant, structured, and useful response by combining all five prompt engineering techniques.
+
+---
+
+<img width="732" height="772" alt="image" src="https://github.com/user-attachments/assets/7fe36f67-e339-4859-8875-215e091d8226" />
+
+
+## 7. COMPARISON OF DIFFERENT PROMPT STRUCTURES
+
+| Prompt Structure | Main Purpose | Output Quality |
+|---|---|---|
+| Basic Prompt | Gives a simple instruction. | Basic |
+| Role Prompt | Assigns a specific role to AI. | More relevant |
+| Context Prompt | Provides background information. | Personalized |
+| Constraint Prompt | Defines limitations and conditions. | More focused |
+| Output Format Prompt | Defines the response structure. | Well-organized |
+| Final Combined Prompt | Combines all five techniques. | More structured and task-specific |
+
+---
+
+## 8. PROCEDURE
+
+1. Select a specific application (Text Summarization).
+2. Prepare a sample input text about cloud computing.
+3. Enter the Basic Prompt into ChatGPT and observe the output.
+4. Upgrade the prompt by adding a specific role.
+5. Add user context to make the response more relevant.
+6. Introduce constraints such as word limits and language requirements.
+7. Specify the required output format.
+8. Combine all five prompt structures into one final prompt.
+9. Compare the outputs generated by each prompt.
+10. Record the observations and prepare the final conclusion.
+
+---
+
+## 9. RESULTS AND OBSERVATIONS
+
+The experiment demonstrates how different prompt structures influence AI-generated responses.
+
+- Basic prompts generate simple responses.
+- Role prompts improve the perspective and style of the response.
+- Context prompts make responses more relevant to the user's needs.
+- Constraint prompts help control the length and content.
+- Output format prompts improve readability and organization.
+- Combined prompts produce more specific and structured responses.
+
+---
+
+## 10. FINAL CONCLUSION
+
+In this experiment, different prompt engineering techniques were studied using Text Summarization as the selected application.
+
+The experiment demonstrated that prompt quality plays an important role in the quality of AI-generated responses.
+
+A basic prompt provides a general answer, whereas role, context, constraint, and output format prompts provide better control over the generated content.
+
+Finally, combining all five prompt structures produced a more relevant, organized, and useful response.
+
+Therefore, effective prompt engineering helps users communicate clearly with Generative AI models and obtain better results for academic and professional applications.
+
+---
+
+**END OF EXPERIMENT**
