@@ -22,7 +22,8 @@ Your goal is to determine which combination of prompting technique + platform pr
 ---
 
 # Algorithm:
-<img width="932" height="499" alt="WhatsApp Image 2026-08-06 at 8 17 23 AM" src="https://github.com/user-attachments/assets/64c87ccb-e573-4e88-9473-1ff838ad75a8" />
+
+<img width="1714" height="918" alt="image" src="https://github.com/user-attachments/assets/d86532fe-bbe6-44c8-bb48-6c821e4202f8" />
 
 
 ## Step 1: Select the Topic
